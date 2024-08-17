@@ -15,3 +15,23 @@ test('Summarize all number values in an array', () => {
     //Assert
     expect(result).toBe(expectedResult);
 });
+
+test('Should yield NaN if at least one invalid number is provided', () => {
+    const inputs = ['invalid', 2];
+
+    const result = add(inputs);
+
+    expect(result).toBeNaN();
+});
+
+test('Should yield correct sum if numeric string array is provided', () => {
+    const inputs = ['1', '2', '3'];
+    const expectedResult = inputs.reduce(
+        (prevValue, currentValue) => +prevValue + +currentValue,
+        0
+    );
+
+    const result = add(inputs);
+
+    expect(result).toBe(expectedResult);
+});
