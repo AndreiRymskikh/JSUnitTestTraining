@@ -35,3 +35,19 @@ test('Should yield correct sum if numeric string array is provided', () => {
 
     expect(result).toBe(expectedResult);
 });
+
+test('Should yield 0 if empty array is provided', () => {
+    const inputs = [];
+
+    const result = add(inputs);
+
+    expect(result).toBe(0);
+});
+
+test('Should throw an error if no value passed into the function', () => {
+    const resultFn = () => {
+        add();
+    }
+
+    expect(resultFn).toThrow();
+});
