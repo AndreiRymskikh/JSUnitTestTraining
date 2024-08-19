@@ -51,3 +51,14 @@ test('Should throw an error if no value passed into the function', () => {
 
     expect(resultFn).toThrow();
 });
+
+test('Should throw an error if multiple values passed instead of array into the function', () => {
+    const num1 = 1;
+    const num2 = 2;
+    
+    const resultFn = () => {
+        add(num1, num2);
+    }
+
+    expect(resultFn).toThrow();
+});
