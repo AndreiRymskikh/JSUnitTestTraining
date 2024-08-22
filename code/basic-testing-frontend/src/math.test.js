@@ -49,7 +49,7 @@ test('Should throw an error if no value passed into the function', () => {
         add();
     }
 
-    expect(resultFn).toThrow();
+    expect(resultFn).toThrow(/is not iterable/);
 });
 
 test('Should throw an error if multiple values passed instead of array into the function', () => {
@@ -60,5 +60,5 @@ test('Should throw an error if multiple values passed instead of array into the 
         add(num1, num2);
     }
 
-    expect(resultFn).toThrow();
+    expect(resultFn).toThrow(/is not iterable/);
 });
