@@ -1,7 +1,8 @@
-import { it, expect } from 'vitest';
+import { it, expect, describe } from 'vitest';
 
 import { validateNumber, validateStringNotEmpty } from './validation';
 
+describe('Validate number methods tests', () => {
 it('should throw an error, if an empty string is provided', () => {
   const input = '';
   const validationFn = () => validateStringNotEmpty(input);
@@ -62,4 +63,5 @@ it('should not throw an error, if a number is provided', () => {
   const input = 1;
   const validationFn = () => validateNumber(input);
   expect(validationFn).not.toThrow();
+});
 });

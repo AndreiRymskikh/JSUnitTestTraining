@@ -1,6 +1,7 @@
-import { test, expect } from 'vitest';
+import { test, expect, describe } from 'vitest';
 import {add} from './math';
 
+describe('add() function tests', () => {
 test('Summarize all number values in an array', () => {
     //Arrange
     const numbers = [1, 2, 3];
@@ -61,4 +62,5 @@ test('Should throw an error if multiple values passed instead of array into the 
     }
 
     expect(resultFn).toThrow(/is not iterable/);
+});
 });
