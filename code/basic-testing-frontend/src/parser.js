@@ -4,3 +4,10 @@ export function extractNumbers(formData) {
   
     return [num1Input, num2Input];
   }
+
+  export function extractEnteredNumberValues(form) {
+    const formData = new FormData(form);
+    const numberInputs = extractNumbers(formData);
+
+    return numberInputs;
+  } 
