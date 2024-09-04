@@ -1,5 +1,5 @@
 import { test, expect, describe } from 'vitest';
-import {transformToNumber} from './numbers';
+import {cleanNumbers, transformToNumber} from './numbers';
 
 describe('transformToNumber() method tests', () => {
 test('Should return number with string input', () => {
@@ -21,4 +21,15 @@ test('Should yield NaN if invalid number is provided', () => {
     expect(result).toBeNaN();
     expect(result1).toBeNaN();
 });
+});
+
+describe('cleanNumbers() function', () => {
+    test('should return an array of numbers if string numbers are provided', () => {
+        const numberValues = ['1', '2'];
+
+        const cleanedNumbers = cleanNumbers(numberValues);
+
+        expect(cleanedNumbers[0]).toBeTypeOf('number');
+        expect(cleanedNumbers[1]).toBeTypeOf('number');
+    });
 });
